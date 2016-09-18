@@ -2,7 +2,10 @@
     'use strict';
 
     angular.module('LunchCheck', [])
-        .controller('LunchCheckController', function($scope) {
+        .controller('LunchCheckController', LunchCheckController);
+
+        LunchCheckController.$inject = ['$scope', '$filter'];
+	    function LunchCheckController($scope) {
 
             $scope.cssColor = "red";
             $scope.menuItems = "";
@@ -32,6 +35,6 @@
                     $scope.message = "Please enter data first";
                 }
             }
-        });
+        };
 })();
 
