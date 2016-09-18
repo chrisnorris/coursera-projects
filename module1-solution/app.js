@@ -1,12 +1,21 @@
-(function(){
-'use strict';
+(function() {
+    'use strict';
+    angular.module('LunchCheck', [])
+        .controller('LunchCheckController', function($scope) {
 
-angular.module('LunchCheck',[])
-
-.controller('LunchCheckController', function($scope){
-
-$scope.name='chris'
-
-});
-
+            $scope.menuItems = "";
+            $scope.message = "";
+            $scope.checkMeal = function() {
+                if ($scope.menuItems != "") {
+                    var items = $scope.menuItems.split(",").length;
+                    if (items <= 3 && items > 0) {
+                        $scope.message = "Enjoy!"
+                    } else {
+                        $scope.message = "Too much!";
+                    }
+                } else {
+                    $scope.message = "Please enter data first";
+                }
+            }
+        });
 })();
