@@ -17,10 +17,11 @@
          <div class="form-group">
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control" ng-model="menuItems">
+	     class="form-control" ng-model="menuItems" ng-keyup="setCss();" style="color:{{cssColor}}; border:2px solid {{cssColor}}" >
      </div>
          <div class="form-group">
-             <button class="btn btn-default" ng-click="checkMeal();">Check If Too Much</button>
+		 <button class="btn btn-default" ng-click="checkMeal();">Check If Too Much</button>
+		 <span>&nbsp;&nbsp; (empty items do not count towards total)</span>
          </div>
          <div class="form-group message">
 		 {{message}}
@@ -28,3 +29,4 @@
    </div>
 </body>
 </html>
+i
