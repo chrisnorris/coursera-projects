@@ -45,6 +45,9 @@
         }, {
             name: "low-fat spam fritters",
             quantity: 2
+        }, {
+            name: "gluten free mars bars",
+            quantity: 25
         }];
         service.buyItem = function(i) {
             boughtItems.push(shoppingItems[i]);
