@@ -19,12 +19,7 @@
          <items-loader-indicator></items-loader-indicator>
          <!-- found-items should be implemented as a component -->
          <ul>
-            <li ng-repeat="item in nidCtrl.found">
-               {{item.short_name}} :
-               {{item.name}}&nbsp({{item.description}})
-               <button ng-click="nidCtrl.removeItem($index);">Remove</button>
-            </li>
-            <!-- <found-items></found-items> -->
+            <found-items></found-items>
          </ul>
       </div>
       <script src="angular.min.js"></script>
