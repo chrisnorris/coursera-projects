@@ -19,7 +19,8 @@
          <items-loader-indicator></items-loader-indicator>
          <!-- found-items should be implemented as a component -->
          <ul>
-            <found-items></found-items>
+            <found-items my-items="nidCtrl"></found-items>
+            <div ng-if="nidCtrl.found.length==0" class="alert alert-danger fade in"><strong>Nothing found</strong></div>
          </ul>
       </div>
       <script src="angular.min.js"></script>

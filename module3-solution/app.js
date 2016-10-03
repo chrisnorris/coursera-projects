@@ -9,9 +9,8 @@
         var ddo = {
             templateUrl: 'foundItems.html',
             scope: {
-                item: '<'
-            },
-            controller: NarrowItDownController
+            controller: '<myItems'
+            }
         };
         return ddo;
     }

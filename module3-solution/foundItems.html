@@ -1,7 +1,8 @@
-<li ng-repeat="item in nidCtrl.found">
-		    {{item.short_name}} :
-		    {{item.name}}&nbsp({{item.description}})
-		    <button ng-click="nidCtrl.removeItem($index);">Remove</button>
-	    </li>
+<h1></br></h1>
+<li ng-repeat="item in controller.found">
+<button class="btn btn-outline-warning" ng-click="controller.removeItem($index);">Don't Want This!</button>
+{{item.short_name}} :
+{{item.name}}&nbsp({{item.description}})
+</li>
 
 
