@@ -1,5 +1,6 @@
- // declare an Angular module to match your ng-app declaration.
-(function(){
+(function () {
 'use strict';
- angular.module('MenuApp',['Data']);
+
+angular.module('MenuApp', ['ui.router']);
+
 })();

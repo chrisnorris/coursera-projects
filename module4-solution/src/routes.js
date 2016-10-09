@@ -1,5 +1,3 @@
-// Create routes.js file and configure your routes and view states in it.
-// These routes should be defined in the MenuApp module.
 (function () {
 'use strict';
 
@@ -18,22 +16,33 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // Home page
   .state('home', {
     url: '/',
-    templateUrl: 'src/menuapp/home.template.html'
+    templateUrl: 'src/menuapp/templates/home.template.html'
   })
 
-  // Categories page
+  // Premade list page
   .state('categories', {
     url: '/categories',
-    templateUrl: 'src/menuapp/menuapp.categoriestemplate.html',
-    controller: 'MenuAppController as mainList'
+    templateUrl: 'src/menuapp/templates/main-menuapp.template.html',
+    controller: 'MainMenuAppController as mainList',
+    resolve: {
+      items: ['MenuAppService', function (MenuAppService) {
+        return MenuAppService.getItems();
+      }]
+    }
   })
-    // Categories page
-  .state('items', {
-    url: '/items',
-    templateUrl: 'src/menuapp/menuapp.itemstemplate.html',
-    controller: 'MenuAppController as mainList'
-  });
 
+  .state('itemDetail', {
+    url: '/item-detail/{itemId}',
+    templateUrl: 'src/menuapp/templates/item-detail.template.html',
+    controller: 'ItemDetailController as itemDetail',
+    resolve: {
+      item: ['$stateParams', 'MenuAppService',
+            function ($stateParams, MenuAppService) {
+              return MenuAppService.getItemsForCategory($stateParams.itemId);
+
+            }]
+    }
+  })
 }
 
 })();
